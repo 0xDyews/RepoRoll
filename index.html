@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RepoRoll - Discover Amazing GitHub Projects</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          RepoRoll
+        </div>
+        <div class="nav-tabs">
+          <button class="nav-tab active" onclick="pageManager.showPage('discover')">
+            <i class="fas fa-compass"></i> Discover
+          </button>
+          <button class="nav-tab" onclick="pageManager.showPage('liked')">
+            <i class="fas fa-heart"></i> My Likes
+          </button>
+          <button class="nav-tab" onclick="pageManager.showPage('saved')">
+            <i class="fas fa-bookmark"></i> Saved
+          </button>
+          <button class="nav-tab" onclick="pageManager.showPage('stats')">
+            <i class="fas fa-chart-bar"></i> Stats
+          </button>
+          <button class="nav-tab" onclick="pageManager.showPage('collections')">
+            <i class="fas fa-folder"></i> Collections
+          </button>
+          <button class="settings-btn" onclick="app.toggleDarkMode()">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Discover Page -->
+      <div id="discover" class="page active">
+        <div id="discover-content">
+          <div class="loading-container">
+            <div class="loading-animation">
+              <div class="loading-cube"></div>
+              <div class="loading-cube"></div>
+              <div class="loading-cube"></div>
+              <div class="loading-cube"></div>
+            </div>
+            <div class="loading-text">Discovering amazing repositories</div>
+            <div class="loading-dots">●</div>
+            <div class="loading-dots">●</div>
+            <div class="loading-dots">●</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liked Repos Page -->
+      <div id="liked" class="page">
+        <div id="liked-content">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading liked repositories...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saved Repos Page -->
+      <div id="saved" class="page">
+        <div id="saved-content">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading saved repositories...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Page -->
+      <div id="stats" class="page">
+        <div id="stats-content">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading statistics...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collections Page -->
+      <div id="collections" class="page">
+        <div id="collections-content">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading collections...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Navigation Arrows -->
+  <div id="nav-arrows" class="navigation-arrows">
+    <button id="arrow-up" class="nav-arrow" onclick="app.showPreviousRepo()">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <button id="arrow-down" class="nav-arrow" onclick="app.showNextRepo()">
+      <i class="fas fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html> 
